@@ -1,7 +1,9 @@
 # portfolio_toDo_byDjango
 toDoアプリ　Djangoバージョン
 ※フロントにFWを使用しない
-※REST/RESTful使用なし（フロント分離なし）
+※フロント分離なし
+※REST APIは使用しないが、REST思想に基づいて設計・開発を行う。
+
 
 # 仕様
 - 言語
@@ -18,43 +20,7 @@ toDoアプリ　Djangoバージョン
   - 命名規則は「dev_yyyymmdd（ブランチ作成年月日）」とする
 
 # コーディングルール
-- 共通事項
-  - インデント：半角空白4文字
-  - ハードコーディング：基本的に行わない。Python定数ファイルを作成・使用することで回避する。
-  - マジックナンバー：基本的に使用しない。Python定数ファイルを作成・使用することで回避する。
-  - 文字コード：BOM無しUTF-8
-  - コーディングの方針：「誰でも理解できる」を目指し、基本の書き方を重視する。
-  - 品質担保：VS Codeの拡張機能（Formatter、Linter）を使用して担保する。
-- Python
-  - 変数：スネークケース（var_name）
-  - 定数：大文字スネークケース（CONST_NAME）
-    - ルート/constに定数種別ごとに定数ファイルを作成する。ファイル名は「const_name.py」とする。
-  - 関数名：スネークケース（def def_name(引数):）
-  - クラス名：パスカルケース（class ClassName(self, 引数):）
-  - 文字列：ダブルクォーテーション（""）
-    - ただし、フォーマット文字列はバッククォートになる（f`string{var_name}string`）
-  - 例外処理：以下のルールに従い、UI上でのメッセージ表示とアクティビティログ作成を行う
-    - 正常：ステータスsuccessで詳細ログを保存＋簡便な成功メッセージを表示（例：保存に成功しました）
-    - 失敗：ステータスerrorで詳細ログを保存＋簡便な失敗メッセージを表示（例：保存に失敗しました）
- - HTML/CSS
-   - Googleのガイドラインに従う：https://google.github.io/styleguide/htmlcssguide.html
-   - class：適宜使用。表記はケバブケース（class-name）とする。
-   - id：必要な場合のみ定義する。表記はケバブケース（役割（container等）-name）とする。
-   - idおよびclassはタグセレクタ指定で対応できる場合、セレクタ使用を優先する。
-   - 入れ子構造：構造の複雑化・レスポンス悪化を避けるため、最低限にとどめる。
-   - HTMLのコメント：基本的にDjangoテンプレートタグ（{% comment %}～{% endcomment %}）とし、F12での表示を回避する
- - Javascript
-   - 位置付け：画面表示完了後の動的処理の補完として使用する。Djangoテンプレートタグで代用できる処理ものはテンプレートタグを優先させる。
-   - ES2025準拠。　参考：https://qiita.com/rana_kualu/items/e82790fa50c05b167dcc
-   - 複数画面で使用するメソッドについてはstatic/js/commonにjsファイルを作成し、使用箇所でimportを行う。
-   - MDN Docsのガイドラインに従う：https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Introduction
-   - 変数：なんでもかんでもletで宣言しない。キャメルケース（var varName / let varName）
-   - 定数：大文字スネークケース（const CONST_NAME）
-   - 関数名：キャメルケース（function myFunc(引数){} ）
-   - 文字列：Pythonと同じ
-   - イベント：イベントリスナ推奨
-   - 非同期通信：fetch()を使用する
-   - 例外処理：Pythonと同じ
+../docs/cording_roules.md参照
 
 # HTTPメソッド
 - RESTで推奨する振る舞いに従う。以下のとおり、使い分けをする。
