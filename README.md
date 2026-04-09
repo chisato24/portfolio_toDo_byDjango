@@ -5,45 +5,64 @@ toDoアプリ　Djangoバージョン
 ※REST APIは使用しないが、REST思想に基づいて設計・開発を行う。
 
 
-# 仕様
-- 言語
+## 仕様
+### 言語
   - Python 3.12（2026/4時点でbugfixが完了しているバージョン）／Django 6.0（Python 3.12で動作する最新バージョン）
   - HTML
   - CSS
   - Javascript（no FW）
   - SQL（PostgreSQL）
 
-# ブランチ
+### ブランチ
 - main：ルート
 - staging：検証用
 - dev：開発用
   - 命名規則は「dev_yyyymmdd（ブランチ作成年月日）」とする
 
-# コーディングルール
-../docs/cording_roules.md参照
+### コーディングルール
+./docs/cording_roules.md参照
 
-# HTTPメソッド
+### 使用頻度が高いコマンド
+- python manage.py startapp <アプリ名>：新規アプリ作成
+- python manage.py makemigrations：models.pyに変更があったとき。migrateの前に行う
+- python manage.py migrate：models.pyの内容をDBに反映
+- python manage.py runserver：ローカルサーバー起動
+- python manage.py collectstatic：各アプリのstaticディレクトリ配下に変更があったとき
+
+### 構成
+本開発において、絶対参照のパスの複雑化を避けるため、アプリを固有のディレクトリにまとめることはしない。
+(root)：リポジトリのルートディレクトリ
+　├ README.md：本ファイル
+  ├ conf：アプリの設定関係
+  │　├ requirements.txt
+  │　├
+  ├ docs：本アプリ開発に関するドキュメント
+  ├ constant：定数ファイル
+
+
+
+### HTTPメソッド
 - RESTで推奨する振る舞いに従う。以下のとおり、使い分けをする。
   - GET：情報取得時…一覧表示、白紙フォームの表示、詳細表示時、キャッシュ保存が必要、リクエストパラメータ使用時
   - POST：新しい情報の登録時…フォーム情報のバックエンドへの送信。要暗号化
 
-# フォーム内容のバリデーションチェック
+### フォーム内容のバリデーションチェック
 - Djangoのforms.is_valid()とcleaned_data.get()を併用し、各viewsにて定義
   - バリデーション内容をF12で確認させない
 
-# 処理ステータス
+### 処理ステータス
 - 成功：success
 - 失敗：error
 - バリデーションチェックエラー：warning
 
-# ログ
+### ログ
 以下の情報をアクティビティログ保存テーブルに書き込む。
 - ログ発生日時（＝created_at）
 - ログを発生させたユーザー（＝created_by）
 - 処理ステータス：定数値
 - 詳細ログ内容
 
-# カラールール
+### カラールール
 - UI全体はモノトーンかつフラットデザインでコンパクトにまとめ、PythonまたはJSによる処理を伴う部分はステータスごとの色を使用して視認性を上げる。
 - 処理結果のステータスによる色分け
   - 成功（success）：緑
