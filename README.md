@@ -7,11 +7,11 @@ toDoアプリ　Djangoバージョン
 
 # 仕様
 - 言語
-  - Python（Django）
+  - Python 3.12（2026/4時点でbugfixが完了しているバージョン）／Django 6.0（Python 3.12で動作する最新バージョン）
   - HTML
   - CSS
   - Javascript（no FW）
-  - SQL
+  - SQL（PostgreSQL）
 
 # ブランチ
 - main：ルート
