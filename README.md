@@ -31,15 +31,28 @@ toDoアプリ　Djangoバージョン
 
 ### 構成
 本開発において、絶対参照のパスの複雑化を避けるため、アプリを固有のディレクトリにまとめることはしない。
+また、シークレットキーなどセキュリティに関する情報を記載したファイルはコミットをせず、本項にも記載しない。
 (root)：リポジトリのルートディレクトリ
 　├ README.md：本ファイル
-  ├ conf：アプリの設定関係
-  │　├ requirements.txt
-  │　├
-  ├ docs：本アプリ開発に関するドキュメント
-  ├ constant：定数ファイル
-
-
+  ├ manage.py：python manage.pyコマンド実行ファイル
+  ├ .gitignore：Github設定ファイル
+  ├ conf：アプリの設定関係ファイルのディレクトリ
+  │　└ requirements.txt
+  ├ constant：定数ファイルディレクトリ
+  │　└ status.pyほか、複数画面で使用する定数を定義するファイル
+  ├ docs：設計書など、開発ドキュメントのディレクトリ
+  │　├ cording_roules.md：コーディングルール
+  │　├ youken.md：要件定義書
+  │　├ basics.md：基本設計書
+  │　├ details.md：詳細設計書
+  │　├ test_docs：テスト仕様書一式
+  ├ prj_root：プロジェクトディレクトリ（python manage.py startprojectで自動生成）
+  ├ static：静的ファイル（js、css、画像ファイル）格納ディレクトリ（python manage.py collectstaticで自動格納）
+  === 以下、各アプリのディレクトリ（python manage.py startappで自動生成） ===
+  ├ auth：ログイン等認証機能アプリのディレクトリ
+  ├ common：共通機能アプリのディレクトリ
+  ├ setting：ユーザー設定と管理機能のアプリのディレクトリ
+  └ task：ToDoの各操作を行う機能のアプリのディレクトリ
 
 ### HTTPメソッド
 - RESTで推奨する振る舞いに従う。以下のとおり、使い分けをする。
