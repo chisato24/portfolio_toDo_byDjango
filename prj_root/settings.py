@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'auth',
+    'common',
+    'setting',
+    'task',
 ]
 
 # ミドルウェア
@@ -65,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'common.templatetags.constant_tags.constants_processor',    # テンプレートタグで定数表記を使用する
             ],
         },
     },

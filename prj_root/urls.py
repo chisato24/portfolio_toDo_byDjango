@@ -1,5 +1,5 @@
 """
-URL configuration for pf1_prj project.
+各アプリのurls.pyへのルーティング
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -15,8 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from constant.url_path import UrlPath
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path(UrlPath.ADMIN, admin.site.urls),
+    path(UrlPath.AUTH, include('auth.urls'), namespace="auth"),   # 認証
+    path(UrlPath.COMMON, include('common.urls'), namespace="common"),   # 共通部分
+    path(UrlPath.TASK, include('task.urls'), namespace="task"),   # タスク管理
+    path(UrlPath.SETTING, include('setting.urls', namespace="setting")),   # 設定
 ]
