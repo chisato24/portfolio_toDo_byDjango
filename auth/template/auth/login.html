@@ -1,0 +1,26 @@
+{% load static%}
+
+   {% comment %}共通<head>タグの読み込み{% endcomment %}
+   {% include FilesPath.COMMON_HEAD %}
+
+   {% comment %}ログイン画面{% endcomment %}
+   <body>
+      <header>
+         <h1><span class="small-font">きょう、</span><br />なにする？</h1>
+      </header>
+
+      {% comment %}ログイン入力部分{% endcomment %}
+      <section>
+         {% comment %}エラーメッセージ{% endcomment %}
+         <p id="error-msg">
+
+         </p>
+         {% comment %}ログインフォーム{% endcomment %}
+         <form method="POST">
+            <input type="send">ログイン</input><input type="reset">リセット</input>
+         </form>
+         <p id="sign-up">未登録の方・パスワードを忘れた方は<a href="">こちら</a></p>
+      </section>
+
+   </body>
+</html>
