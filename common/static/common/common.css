@@ -1,0 +1,160 @@
+/* 全画面共通CSS設定 */
+/* ルートスタイル */
+:root{
+   height:fit-content;
+   min-height: 100%;
+   width: 100%;
+   margin: 0;
+   border: 0;
+   padding: 0;
+   background:repeating-linear-gradient(
+      -45deg,white, #AFEEEE 2px, white 0, #AFEEEE 29px
+      );
+   color: #424242;
+   font-size: 11pt;
+   font-weight: normal;
+   font-family: 'Open Sans', 'Zen Kaku Gothic Antique', 'BIZ UDPゴシック';
+}
+
+/* 以下、ブロック要素
+メインコンテナはルートを継承 */
+
+/* アプリバー */
+nav{
+   height: 3rem;
+   padding: 0.5rem 2rem;
+   display:flex;
+   position:sticky;
+   top:0;
+   left: 0;
+   background-color: #00eded;
+   color:white;
+}
+
+/* モーダル */
+.modal{
+
+}
+
+.backdrop{
+   margin:0;
+   border: 0;
+   padding: 0;
+   background-color: #424242;
+   back
+}
+
+/* メッセージ */
+.msg-box{
+
+}
+
+/* プログレスバー */
+.progress{
+
+}
+
+/* カード */
+.card{
+   margin: 2rem;
+   padding: 0.75rem;
+   border: 1px solid #beeded;
+   border-radius: 6pt;
+   background-color: white;
+   overflow-x: scroll;
+}
+
+/* 表 */
+table{
+
+}
+
+/* FlexBox親コンテナ */
+.flex{
+
+}
+
+/* グリッドレイアウト親コンテナ */
+.grid{
+
+}
+
+/* 各ブロック要素 */
+div{
+
+}
+
+section{
+
+}
+
+p{
+
+}
+
+ul{
+
+}
+
+ul > li{
+
+}
+
+form{
+
+}
+
+/* 以下、インライン要素 */
+/* 見出し */
+h1{
+   font-size: 1.75rem;
+   font-weight: bold;
+}
+
+h1.small-font{
+   font-weight: bold;
+}
+
+h2{
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+
+h3{
+   font-size: 1.25rem;
+}
+
+h4{
+   font-size: 1rem;
+   font-weight: bold;
+}
+
+h1{
+   font-size: 1rem;
+   font-weight: normal;
+}
+
+/* 赤文字 */
+span.warning{
+   color: red;
+}
+
+/* アイコン */
+
+/* フォーム要素 */
+label{
+
+}
+
+input:not(type="submit"){
+
+}
+
+textarea{
+
+}
+
+button{
+
+}
+

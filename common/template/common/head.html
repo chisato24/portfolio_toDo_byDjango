@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ToDoアプリ「きょう、なにする？」 | {% title %}</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2" />
+   {% comment %}共通CSS{% endcomment %}
+   <link rel="stylesheet" href="{% static 'common/common.css' %}">
+   {% comment %}各アプリ固有CSS{% endcomment %}
+   <link rel="stylesheet" href="{% static '{% app_css %}' %}">
+   </head>
